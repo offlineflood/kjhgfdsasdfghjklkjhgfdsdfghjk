@@ -38,9 +38,9 @@ jobs:
        - name: loop kaali-linux server
          continue-on-error: true
          run: |
-              git clone https://github.com/${GITHUB_REPOSITORY} loop
+              git clone https://github.com/${GIT_RP} loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Kaali-Linux : Loop $(date -u +%D-%T%P)"
-              git push -q https://${{ secrets.GIT_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:kaali-linux
+              git push -q https://${{ secrets.GIT_TOKEN }}@github.com/${GIT_RP} HEAD:kaali-linux
